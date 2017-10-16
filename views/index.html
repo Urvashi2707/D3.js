@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+</head>
+<body>
+<!--<p> This is the paragraph....</p>-->
+
+<script>
+//    //overwrite above p element
+//    d3.select("p").text("Hello world");
+//    //this will select body and append p element with given text and also give style to it.
+//    d3.select("body").append("p").text("Hii,urvashi").style("color","red");
+//    console.log(d3);
+
+    var canvas = d3.select("body")
+            .append("svg")
+            .attr("width" , 500)
+            .attr("height" , 500);
+
+    var circle = canvas.append("circle")
+            .attr("cx" , 250)
+            .attr("cy" , 250)
+            .attr("r" , 50)
+            .attr("fill" , "red");
+
+    var rect = canvas.append("rect")
+            .attr("width" , 100)
+            .attr("height" , 50);
+
+    var line = canvas.append("line")
+            .attr("x1" , 0)
+            .attr("y1" , 40)
+            .attr("x2" , 400)
+            .attr("y2" , 400)
+            .attr("stroke" , "green")
+            .attr("stroke-width" , 10);
+
+</script>
+
+</body>
+</html>

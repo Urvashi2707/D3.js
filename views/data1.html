@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>visualisation of data</title>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+</head>
+<body>
+<!--<p> This is the paragraph....</p>-->
+
+<script>
+
+    var dataArray = [20,40,50,55,70,60];
+
+    var width = 500;
+    var height = 500;
+
+    var widescale = d3.scale.linear()
+            .domain([0,80])
+            .range([0 , width]);
+
+    var color = d3.scale.linear()
+            .domain([0,80])
+            .range(["red" , "blue"]);
+
+    var axis =  d3.svg.axis()
+            .ticks(4)
+            .scale(widescale);
+
+    var canvas = d3.select("body")
+            .append("svg")
+            .attr("width" , width)
+            .attr("height" , height)
+            .append("g")
+            .attr("transform" , "translate(20,0)");
+
+
+
+
+    var bars = canvas.selectAll("rect")
+            .data(dataArray)
+            .enter()
+            .append("rect")
+            .attr("width" , function(d) {
+                return widescale(d);
+            })
+            .attr("fill" , function(d) {
+                return color(d);
+            })
+            .attr("height" , 50)
+            .attr("y" , function(d , i){
+            return  i*100;
+            });
+
+    canvas.append("g")
+            .attr("transform" , "translate(0 , 450)").call(axis);
+
+
+</script>
+
+</body>
+</html>

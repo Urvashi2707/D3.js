@@ -1,0 +1,28 @@
+{
+  "name" : "Maa",
+  "value" : 100,
+  "children" : [
+    {
+      "name" : "Dad",
+      "value" : 75,
+      "children" : [
+        {"name" : "urvashi" , "value" : 25},
+        {"name" : "divyam" , "value" : 25},
+        {"name" : "ritika" , "value" : 25},
+        {"name" : "sneha" , "value" : 25}
+      ]
+    },
+    {
+      "name" : "mom",
+      "value" : 75,
+      "children" : [
+
+        {"name" : "divyam","value" : 25},
+        {"name" : "ritika","value" : 25},
+        {"name" : "sneha","value" : 25}
+
+
+      ]
+    }
+  ]
+}
